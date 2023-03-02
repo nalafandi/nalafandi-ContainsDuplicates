@@ -1,4 +1,9 @@
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
+import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class ContainsDuplicates {
     /**
@@ -8,6 +13,16 @@ public class ContainsDuplicates {
      * @return true if nums contains any duplicate values, false if it does not.
      */
     public boolean containsDuplicate(int[] nums){
-        return false;
+
+        List<Object> list = Arrays.asList(nums);
+
+        Set<Object> set = new HashSet<>(list);
+
+        for (Object o : nums) {
+            if (set.add(o) == false) {
+                return true;
+            }
+        }
+        return false; 
     }
 }
