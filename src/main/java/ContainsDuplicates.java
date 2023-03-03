@@ -13,10 +13,8 @@ public class ContainsDuplicates {
      * @return true if nums contains any duplicate values, false if it does not.
      */
     public boolean containsDuplicate(int[] nums){
-
-        List<Object> list = Arrays.asList(nums);
-
-        Set<Object> set = new HashSet<>(list);
+                
+        Set<Object> set = new HashSet<>();
 
         for (Object o : nums) {
             if (set.add(o) == false) {
